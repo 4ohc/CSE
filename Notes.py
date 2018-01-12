@@ -10,14 +10,15 @@
 # text
 # """
 # # variables
-# a = 5
-# b = 4
-# c = "the quick brown fox jumps over the lazy dog"
-# print (a + b)
-# print (a - 5 * b)
-# print (a)
-# print (c)
-# print (b)
-# print (a * b + a - a)
-# print (a / b)
-# print ( a ** b) #a to the power of b
+a = 5
+b = 4
+c = "the quick brown fox jumps over the lazy dog"
+print(a + b)
+print(a - 5 * b)
+print(a)
+print(c)
+print(b)
+print(a * b + a - a)
+print(a / b)
+print(a ** b)
+# a to the power of b
