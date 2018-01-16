@@ -17,5 +17,5 @@ while money_left > 0:
 
 
 
-
+print("you had %d money at some point")
 
