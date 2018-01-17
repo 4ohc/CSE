@@ -1,7 +1,7 @@
 import random
 
 money_left = 15
-
+rounds = 0
 while money_left > 0:
     dice1 = random.randint(1, 6)
     dice2 = random.randint(1, 6)
@@ -14,8 +14,6 @@ while money_left > 0:
     else:
         money_left -= 1
     print(money_left)
+    rounds += 1
 
-
-
-print("you had %d money at some point")
-
+print("you played for %d rounds" % rounds)
