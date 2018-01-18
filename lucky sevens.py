@@ -2,6 +2,9 @@ import random
 
 money_left = 15
 rounds = 0
+max_money = money_left
+max_round = 0
+print("you had %d to start." % money_left)
 while money_left > 0:
     dice1 = random.randint(1, 6)
     dice2 = random.randint(1, 6)
@@ -11,9 +14,13 @@ while money_left > 0:
 
     if dice1 + dice2 == 7:
         money_left += 4
+
     else:
         money_left -= 1
     print(money_left)
     rounds += 1
 
+
 print("you played for %d rounds" % rounds)
+print(max_round)
+print("the most you had was %d." % max_money)
