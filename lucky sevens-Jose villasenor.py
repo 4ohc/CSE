@@ -20,4 +20,3 @@ while money_left > 0:
     rounds += 1
 
 
-print("you played for %d rounds" % rounds)
