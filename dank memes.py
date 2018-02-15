@@ -35,14 +35,69 @@ world_map = {
         'NAME': "freezer",
         'DESCRIPTION' : "a chilling room, its full of meat",
         'PATHS' : {
-            'NORTH': 'PORTALROOM'
+            'NORTH': 'PORTALROOM',
+            'SOUTH': 'KITCHEN'
         }
+    },
+    'KITCHEN': {
+        'NAME' : "kitchen",
+        'DESCRIPTION': "an average kitchen...nothing to see here",
+        'PATHS' : {
+            'NORTH' : 'FREEZER',
+            'EAST': 'LIVINGROOM',
+
+        }
+    },
+    'LIVINGROOM': {
+        'NAME': "the livingroom",
+        'DESCRIPTION': "The room has a single chest, you could store things there...like that sword",
+        'PATHS' : {
+            'SOUTH' : "HALL",
+            'WEST': "KITCHEN"
+        }
+    },
+    'HALL' : {
+        'NAME': "a large hall",
+        'DESCRIPTION' : "this hall may be a point of no return",
+        'PATHS': {
+            'EAST': "DIO ROOM",
+            'NORTH' : "LIVING ROOM"
+        }
+
+    },
+    'DIO ROOM':{
+        'NAME': 'a room',
+        'DESCRIPTION': 'you feel a dank presence',
+        'PATHS' : {
+            'WEST': 'HALL',
+            'EAST': 'SPIKETRAP',
+            'NORTH': 'STARTROOM',
+            'SOUTH': 'STARTROOM'
+        }
+    },
+    'SPIKETRAP' : {
+        'NAME': 'NO HOPE',
+        'DESCRIPTION': 'no point.....youre already dead',
+        'PATHS': {
+         'NORTH': 'STARTROOM',
+        'SOUTH': 'STARTROOM',
+        'WEST': 'STARTROOM',
+        'EAST': 'STARTROOM',
+        'UP': 'STARTROOM',
+        'DOWN':'STARTROOM',
+        'NANI': 'SECRET'
+        }
+    },
+    'SECRET':{
+     'NAME' : 'you see our lord and saviour JoJo',
+    'PATHS' : {
+     'NORTH':'STARTROOM'
+    }
     }
 }
-
 current_node = world_map ['STARTROOM']
 
-directions = ['NORTH', 'SOUTH', 'EAST', 'WEST', 'DOWN', 'UP']
+directions = ['NORTH', 'SOUTH', 'EAST', 'WEST', 'DOWN', 'UP', 'NANI']
 
 while True :
     print(current_node['NAME'])
