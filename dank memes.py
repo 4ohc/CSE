@@ -13,7 +13,8 @@ world_map = {
         'PATHS': {'DOWN': "DARKROOM",
                   'SOUTH': "FREEZER",
                   'WEST': "EMPTYROOM",
-                  'EAST': "STARTROOM"
+                  'EAST': "STARTROOM",
+                  'NORTH': "SECONDCAVE"
                   }
     },
     'DARKROOM': {
@@ -93,10 +94,31 @@ world_map = {
     'PATHS' : {
      'NORTH':'STARTROOM'
     }
+    },
+    'SECONDCAVE': {
+        'NAME': "unknown area",
+        'DESCRIPTION': "This area seems a bit warm..the path is made with s type of red stone..it seams fragile",
+        'PATHS': {
+            'WEST': 'THENETHER',
+            'NORTH': 'LAVA POOL',
+            'SOUTH': 'PORTALROOM',
+            'EAST' : 'STEVEROOM'
+        }
+    },
+    'THENETHER': {
+        'NAME' : 'NETHER',
+        'DESCRIPTION' : "This place seems to be uninhabitable by man, ..lava is everywhere",
+        'PATHS' : {
+            'NORTH': 'DEATH',
+            'SOUTH': 'SECONDCAVE'
+
+        }
+    },
+    'DEATH': {
+        'NAME'
     }
 }
 current_node = world_map ['STARTROOM']
-
 directions = ['NORTH', 'SOUTH', 'EAST', 'WEST', 'DOWN', 'UP', 'NANI']
 
 while True :
