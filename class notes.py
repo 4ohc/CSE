@@ -1,20 +1,6 @@
-class Room(object):
-    def __int__(self, name, north):
-        self.name = name
-        self.north = north
 
-
-   def move(self, direction):
-    global current_node
-    current_node = globals()[getattr(self, direction)]
-
-
-
- west_house = Room(None, "west of house", 'north of house')
-
-"""""
 class Shoes(object):
-    def __int__(self, lace_color, lighting, brand):  # TWO underscores before and after
+    def __init__(self, lace_color, lighting, brand):  # TWO underscores before and after
         # Things a shoe has
         self.lace_color = lace_color
         self.rgb_lighting = lighting
@@ -41,9 +27,8 @@ print(first_pair.clean)
 
 first_pair.wear()
 print(first_pair.clean)
-first_pair.wash()
+print(first_pair.wash())
 print(first_pair.clean)
-"""""
 
 
 
