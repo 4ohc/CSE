@@ -19,4 +19,5 @@ while money_left > 0:
     print(money_left)
     rounds += 1
 
+print("you played for %d rounds" % rounds)
 

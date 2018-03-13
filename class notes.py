@@ -1,36 +1,33 @@
+# class Shoes(object):
+#   def __init__(self, lace_color, lighting, brand):  # TWO underscores before and after
+# Things a shoe has
+#      self.lace_color = lace_color
+#     self.rgb_lighting = lighting
+#    self.used = False
+#   self.brand = brand
+#  self.wash = True
 
-class Shoes(object):
-    def __init__(self, lace_color, lighting, brand):  # TWO underscores before and after
-        # Things a shoe has
-        self.lace_color = lace_color
-        self.rgb_lighting = lighting
-        self.used = False
-        self.brand = brand
-        self.wash = True
+# def wear(self):
+#   self.used = True
+#  self.clean = False
+# print("you wear the shoes")
 
-    def wear(self):
-        self.used = True
-        self.clean = False
-        print("you wear the shoes")
-
-    def wash(self):
-        self.clean = True
-        print("you clean the shoes")
-
-
-first_pair = Shoes("Red", True, "jordan")
-second_pair = Shoes("pink", False, "Sketchers")
-
-print(first_pair.brand)
-print(second_pair.lace_color)
-print(first_pair.clean)
-
-first_pair.wear()
-print(first_pair.clean)
-print(first_pair.wash())
-print(first_pair.clean)
+# def wash(self):
+#   self.clean = True
+#  print("you clean the shoes")
 
 
+# first_pair = Shoes("Red", True, "jordan")
+# second_pair = Shoes("pink", False, "Sketchers")
+
+# print(first_pair.brand)
+# print(second_pair.lace_color)
+# print(first_pair.clean)
+
+# first_pair.wear()
+# print(first_pair.clean)
+# print(first_pair.wash())
+# print(first_pair.clean)
 
 
 class Car(object):
