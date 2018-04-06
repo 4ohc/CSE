@@ -46,3 +46,7 @@ class Tesla(Car):
 
     def fly(self):
         print("you launch the car into low earth orbit")
+
+
+meme = Tesla(500000000)
+meme.fly()

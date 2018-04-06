@@ -33,7 +33,7 @@ class Person (object):
 
     def combat(self):
         print("a troll blocks your path he has heavy armor")
-        if self.DR >= input("you hit him for >_"):
+        if self.DR >= input("you hit him with >_"):
             print("he shrugs off your hit, and kills you")
             quit()
         else:
@@ -44,7 +44,7 @@ class Person (object):
                 print("you die")
 
 
-thing = Person("guard troll", 400, "place holder", 'sword', "poison", "14")
+thing = Person("guard troll", 400, "place holder", 'sword', "poison", "axe")
 
 thing.interaction(1)
 thing.combat()
