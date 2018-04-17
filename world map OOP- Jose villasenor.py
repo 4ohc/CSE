@@ -55,8 +55,9 @@ ROOF = Room("roof", "a simple black roof, you could continue to go further into 
             "ROOFHOLE", None, None, None, "EGG", "FORTROOMONE")
 EGG = Room("egg", "the god tier egg only few can harness its power into a nice omelet", None, None, None, None, None,
            "ROOF")
-BOSSROOM = Room ("final", "a giant creature stands at the center, the door behind you shuts closed"
-                          "...hope you got everything you need", None, None, None, None, None, None)
+BOSSROOM = Room("final", "a giant creature stands at the center, the door behind you shuts closed"
+                         "...hope you got everything you need", None, None, None, None, None, None)
+SECRETROOM = Room("first easter egg", "good work heres a reward...enjoy your potato", )
 current_node = STARTROOM
 directions = ['north', 'south', 'east', 'west', 'down', 'up', ]
 short_directions = ['n', 's', 'e', 'w', 'd', 'u']
