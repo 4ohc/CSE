@@ -184,9 +184,15 @@ class rotten_steak(Food):
         print("you made a mistake it had gone bad! you vomit and take %s damage" % self.heal)
 
 
+odd_looking_steak = rotten_steak
+
+
 class potato(Food):
     def __init__(self):
         super(potato, self).__init__(1, "potato", 200000000000000000000000000000000000000000000000000000000000000000000)
+
+
+potato = potato
 
 
 class Monster(object):
@@ -223,70 +229,82 @@ class Room(object):
 
 
 STARTROOM = Room("cave entrance", "the dark cave gives off a mysterious aura", None, None, None, "PORTALROOM", None,
-                 None, None)
+                 None, 'nothing')
 PORTALROOM = Room("portal room", "a purple portal, you can hear screams coming from it "
                                  "a odd looking rug is in the center of the room", "SECONDCAVE", "STARTROOM", "FREEZER",
-                  "EMPTYROOM", None, "DARKROOM", None)
+                  "EMPTYROOM", None, "DARKROOM", 'nothing')
 DARKROOM = Room("dark room", "the room is too dark to see in, you might get eaten by a grue", None, None, None, None,
-                "PORTALROOM", None, None)
+                "PORTALROOM", None, 'nothing')
 EMPTYROOM = Room('"empty room"', "the room seems empty, nothing to see here", None, "PORTALROOM", "SECRETROOM", None,
-                 None, None, None)
+                 None, None, 'nothing')
 FREEZER = Room('freezer', "a chilling room, its full of meat", "PORTALROOM", None, "KITCHEN", None, None, None,
-               rotten_steak)
+               'odd looking steak')
 KITCHEN = Room("kitchen", "an average kitchen...nothing to see here", "FREEZER", "LIVINGROOM", None, None, None, None,
-               potato)
+               'potato')
 LIVINGROOM = Room("livingroom", "The room has a single chest, you could store things there...like that sword", None,
-                  None, "HALL", "KITCHEN", None, None, WoodenAxe)
+                  None, "HALL", "KITCHEN", None, None, 'WoodenAxe')
 HALL = Room("a large hall", "this hall may be a point of no return, an apple is near the other door", "LIVINGROOM",
-            "CURSEDROOM", None, None, None, None, poisoned_apple)
+            "CURSEDROOM", None, None, None, None, 'red apple')
 CURSEDROOM = Room("a room", "a shadowy figure stands at the center of the room", 'STARTROOM', 'SPIKETRAP' 'HALL', None,
-                  None, None, None, Steak)
+                  None, None, None, 'Steak')
 SPIKETRAP = Room('trap', 'spikes surround you..you can still turn back...but its no use the shadowy figure blocks your '
                          'exit..all you can to is accept your fate', 'STARTROOM', 'STARTROOM', 'STARTROOM', 'STARTROOM',
-                 None, None, Apple)
+                 None, None, 'Apple')
 SECONDCAVE = Room('unknown area', "This area seems a bit warm..the path is made with s type of red stone..it "
-                                  "seams fragile", 'LAVAPOOL', None, 'PORTALROOM', 'THENETHER', None, None, WoodenAxe)
+                                  "seams fragile", 'LAVAPOOL', None, 'PORTALROOM', 'THENETHER', None, None, 'WoodenAxe')
 THENETHER = Room('nether', "This place seems to be uninhabitable by man, ..lava is everywhere", None, "SECONDCAVE",
-                 'FORTRESS', None, None, None, SteelAxe)
+                 'FORTRESS', None, None, None, 'SteelAxe')
 FORTRESS = Room("Mysterious Fort", "the fort is made of some odd material, it seems to be open but you'll need to "
                                    "climb it", None, None, None, "THENETHER", 'FORTOPENING', None, None)
 FORTOPENING = Room("fort main gate", "this fort has a dark black gate it seemed to be made using the lava.."
                                      "the bars are too wide to keep anyone out", 'FORTROOMONE',
-                   None, None, None, None, "Fortress", SteelSword)
+                   None, None, None, None, "Fortress", 'SteelSword')
 FORTROOMONE = Room("garden", "a patch of mysterious red mushroom like things grown on haunting sand, "
                              "the sand has faces on it..they all look like they are in pain", "SECONDPORTAL",
-                   "SPAWNER", 'FORTOPENING', None, "ROOF", None, None)
+                   "SPAWNER", 'FORTOPENING', None, "ROOF", None, 'nothing')
 SECONDPORTAL = Room("a portal", "this portal looks similar to the first portal you went into, it may take you home.."
-                                " but don't trust it", "STARTROOMV2", None, "FORTROOMONE", None, None, None, None)
+                                " but don't trust it", "STARTROOMV2", None, "FORTROOMONE", None, None, None, 'nothing')
 STARTROOMV2 = Room("cave", "hey you made it back..wait the portal closed..there's no exit..you are trapped.."
-                           "guess you gotta try again", None, None, None, None, None, None, None)
-SPAWNER = Room("a simple block", "a block sits ontop of some stairs..you better just go it seems to make odd noises",
-               None, None, None, "FORTROOMONE", None, None, Platinum_Sword)
+                           "guess you gotta try again", None, None, None, None, None, None, 'nothing')
+SPAWNER = Room("a simple block", "a block sits on top of some stairs..you better just go it seems to make odd noises",
+               None, None, None, "FORTROOMONE", None, None, 'Platinum_Sword')
 ROOF = Room("roof", "a simple black roof, you could continue to go further into the fort from here",
-            "BOSSROOM", None, None, None, "EGG", "FORTROOMONE", None)
+            "BOSSROOM", None, None, None, "EGG", "FORTROOMONE", 'nothing')
 EGG = Room("egg", "the god tier egg only few can harness its power into a nice omelet", None, None, None, None, None,
-           "ROOF", PlatinumAxe)
+           "ROOF", 'PlatinumAxe')
 BOSSROOM = Room("final", "a giant creature stands at the center, the door behind you shuts closed"
-                         "...hope you got everything you need", None, None, None, None, None, None, None)
+                         "...hope you got everything you need", None, None, None, None, None, None, 'nothing')
 
-SECRETROOM = Room("first easter egg", "good work heres a potato", 'EMPTYROOM', None, None, None, None, None, potato)
+SECRETROOM = Room("first easter egg", "good work here's a potato", 'EMPTYROOM', None, None, None, None, None, 'potato')
 current_node = STARTROOM
 directions = ['north', 'south', 'east', 'west', 'down', 'up', ]
 short_directions = ['n', 's', 'e', 'w', 'd', 'u']
 inventory = []
-
+Take_short = ['t', 'p']
+Take = ["take", "pick up"]
 while True:
     print(current_node.name)
     print(current_node.description)
+    print("you look around the room and see %s" % current_node.item)
     command = input('>_').lower().strip()
     if command == 'quit':
         quit(0)
+    elif command in Take_short:
+        TOP = Take_short.index(command)
+        command = Take[TOP]
     elif command in short_directions:
         # look for which command we typed in
         pos = short_directions.index(command)
         # Change the command to be the long form
         command = directions[pos]
 
+    if command in Take:
+        try:
+            current_node.item
+        except KeyError:
+            print("Nothing to take here")
+        else:
+            print("command not recognized")
     if command in directions:
         try:
             current_node.move(command)
