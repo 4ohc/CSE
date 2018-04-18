@@ -211,6 +211,11 @@ class Finalboss(Monster):
         print("the monster swings ")
 
 
+class item(object):
+    def __init__(self, item):
+        self.item = item
+
+
 class Room(object):
     def __init__(self, name, description, north, east, south, west, up, down, item):
         self.name = name
@@ -226,6 +231,10 @@ class Room(object):
     def move(self, direction):
         global current_node
         current_node = globals()[getattr(self, direction)]
+
+    def take(self, item):
+        global current_item
+        current_item = globals()[getattr(self, item)]
 
 
 STARTROOM = Room("cave entrance", "the dark cave gives off a mysterious aura", None, None, None, "PORTALROOM", None,
@@ -276,7 +285,9 @@ BOSSROOM = Room("final", "a giant creature stands at the center, the door behind
                          "...hope you got everything you need", None, None, None, None, None, None, 'nothing')
 
 SECRETROOM = Room("first easter egg", "good work here's a potato", 'EMPTYROOM', None, None, None, None, None, 'potato')
+
 current_node = STARTROOM
+current_item = STARTROOM.item
 directions = ['north', 'south', 'east', 'west', 'down', 'up', ]
 short_directions = ['n', 's', 'e', 'w', 'd', 'u']
 inventory = []
@@ -300,11 +311,13 @@ while True:
 
     if command in Take:
         try:
-            current_node.item
-        except KeyError:
+            current_item.take(command)
+
+        except KeyError and AttributeError:
             print("Nothing to take here")
         else:
             print("command not recognized")
+
     if command in directions:
         try:
             current_node.move(command)
