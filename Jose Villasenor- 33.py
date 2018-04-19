@@ -303,6 +303,7 @@ while True:
     elif command in Take_short:
         TOP = Take_short.index(command)
         command = Take[TOP]
+        inventory.append(input)
     elif command in short_directions:
         # look for which command we typed in
         pos = short_directions.index(command)
