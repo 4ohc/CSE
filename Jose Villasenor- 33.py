@@ -317,3 +317,4 @@ while True:
             print("you cannot go this way.")
     else:
         print("command not recognized")
+
