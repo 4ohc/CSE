@@ -61,12 +61,6 @@ class SteelAxe(WoodenAxe):
         super(SteelAxe, self).__init__(durability, material)
         self.damage = damage
 
-    def cleave(self):
-        self.durability -= 40
-        self.damage -= 5
-        print("you rush your opponent and swing your axe decapitating them killing them instantly...your weapon has "
-              "%s hits left" % self.durability)
-
     def inspect(self):
         print("you look at your axe, it has %s hits left" % self.durability)
         print("it is made of %s" % self.material)
@@ -232,9 +226,9 @@ class Room(object):
         global current_node
         current_node = globals()[getattr(self, direction)]
 
-    def take(self, item):
+    def take(self, items):
         global current_item
-        current_item = globals()[getattr(self, item)]
+        current_item = globals()[getattr(self, items)]
 
 
 STARTROOM = Room("cave entrance", "the dark cave gives off a mysterious aura", None, None, None, "PORTALROOM", None,
@@ -291,19 +285,16 @@ current_item = STARTROOM.item
 directions = ['north', 'south', 'east', 'west', 'down', 'up', ]
 short_directions = ['n', 's', 'e', 'w', 'd', 'u']
 inventory = []
-Take_short = ['t', 'p']
-Take = ["take", "pick up"]
+Take = ["take"]
 while True:
     print(current_node.name)
     print(current_node.description)
     print("you look around the room and see %s" % current_node.item)
     command = input('>_').lower().strip()
+
     if command == 'quit':
         quit(0)
-    elif command in Take_short:
-        TOP = Take_short.index(command)
-        command = Take[TOP]
-        inventory.append(input)
+
     elif command in short_directions:
         # look for which command we typed in
         pos = short_directions.index(command)
