@@ -186,7 +186,19 @@ class potato(Food):
         super(potato, self).__init__(1, "potato", 200000000000000000000000000000000000000000000000000000000000000000000)
 
 
-potato = potato
+class Character(object):
+    def __init__(self, health):
+        self.health = health
+
+
+class Player(Character):
+    def __init__(self):
+        super(Player, self).__init__(100)
+
+    def GameOver(self):
+        if self.health == 0:
+            print("you died, your journey is over")
+            quit()
 
 
 class Monster(object):
@@ -202,12 +214,12 @@ class Finalboss(Monster):
                                         )
 
     def final_hit(self):
-        print("the monster swings ")
-    
+        print("the monster swings dealing %s damage" % self.attack)
+
 
 class item(object):
-    def __init__(self, item):
-        self.item = item
+    def __init__(self, items):
+        self.items = items
 
 
 class Room(object):
@@ -225,7 +237,7 @@ class Room(object):
     def move(self, direction):
         global current_node
         current_node = globals()[getattr(self, direction)]
-    
+
     def take(self, items):
         global current_item
         current_item = globals()[getattr(self, items)]
@@ -273,10 +285,12 @@ SPAWNER = Room("a simple block", "a block sits on top of some stairs..you better
                None, None, None, "FORTROOMONE", None, None, 'Platinum_Sword')
 ROOF = Room("roof", "a simple black roof, you could continue to go further into the fort from here",
             "BOSSROOM", None, None, None, "EGG", "FORTROOMONE", 'nothing')
-EGG = Room("egg", "the god tier egg only few can harness its power into a nice omelet", None, None, None, None, None,
+EGG = Room("egg", "1110101 01110010 00100000 01101101 01101111 01101101 00100000 01100111 01100001 01100101",
+           None, None, None, None, None,
            "ROOF", [PlatinumAxe])
-BOSSROOM = Room("final", "a giant creature stands at the center, the door behind you shuts closed"
-                         "...hope you got everything you need", None, None, None, None, None, None, 'nothing')
+BOSSROOM = Room("final", "01110100 01101000 01100101 00100000 01100101 01101110 01100100 00100000 01101001 01110011 "
+                         "00100000 01101110 01100101 01100001 01110010 0001010", None, None, None, None, None, None,
+                'nothing')
 
 SECRETROOM = Room("first easter egg", "good work here's a potato", 'EMPTYROOM', None, None, None, None, None, [potato])
 
@@ -317,4 +331,3 @@ while True:
             print("you cannot go this way.")
     else:
         print("command not recognized")
-
